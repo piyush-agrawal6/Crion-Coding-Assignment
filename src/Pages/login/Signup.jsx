@@ -10,7 +10,6 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    organization: "",
   });
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
@@ -22,11 +21,7 @@ const Signup = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    if (
-      formData.name.trim() !== "" &&
-      formData.email.trim() !== "" &&
-      formData.organization.trim() !== ""
-    ) {
+    if (formData.name.trim() !== "" && formData.email.trim() !== "") {
       if (formData.name.trim().length < 4) {
         setLoading(false);
         messageApi.open({
@@ -150,13 +145,6 @@ const Signup = () => {
                 onChange={handleFormChange}
                 type="email"
                 placeholder="Enter email"
-              />
-              <input
-                name="organization"
-                value={formData.organization}
-                onChange={handleFormChange}
-                type="text"
-                placeholder="Organization name"
               />
               <p>
                 Already a User ? <Link to="/">Login .</Link>

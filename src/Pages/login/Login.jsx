@@ -103,7 +103,7 @@ const Login = () => {
     <div className="login">
       <div className="loginContainer">
         <div className="loginImage">
-          <img src="./assets/signup.png" alt="" />
+          <img src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7863.jpg" alt="" />
         </div>
         <div className="loginDetail">
           <div>

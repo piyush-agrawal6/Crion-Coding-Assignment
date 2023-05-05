@@ -5,7 +5,7 @@ import axios from "axios";
 export const registerUser = (userData) => async (dispatch) => {
   try {
     const data = await axios.post(
-      `https://impossible-slippers-colt.cyclic.app/user/new`,
+      `https://outrageous-hoodie-jay.cyclic.app/user/new`,
       userData
     );
     return data.data;
@@ -18,7 +18,7 @@ export const registerUser = (userData) => async (dispatch) => {
 export const checkOTP = (form) => async (dispatch) => {
   try {
     const data = await axios.post(
-      `https://impossible-slippers-colt.cyclic.app/user/register`,
+      `https://outrageous-hoodie-jay.cyclic.app/user/register`,
       form
     );
     if (data.data.message === "user registered successfully") {
@@ -45,7 +45,7 @@ export const checkOTP = (form) => async (dispatch) => {
 export const googleRegister = (form) => async (dispatch) => {
   try {
     const data = await axios.post(
-      `https://impossible-slippers-colt.cyclic.app/user/googleregister`,
+      `https://outrageous-hoodie-jay.cyclic.app/user/googleregister`,
       form
     );
     if (data.data.message === "user registered successfully") {
@@ -72,7 +72,7 @@ export const googleRegister = (form) => async (dispatch) => {
 export const editUser = (id, userData) => async (dispatch) => {
   try {
     await axios.put(
-      `https://impossible-slippers-colt.cyclic.app/user/update?id=${id}`,
+      `https://outrageous-hoodie-jay.cyclic.app/update?id=${id}`,
       userData
     );
     dispatch({
@@ -88,7 +88,7 @@ export const editUser = (id, userData) => async (dispatch) => {
 export const authLogin = (data) => async (dispatch) => {
   try {
     const res = await axios.post(
-      "https://impossible-slippers-colt.cyclic.app/user/login",
+      "https://outrageous-hoodie-jay.cyclic.app/user/login",
       data
     );
     return res.data;
@@ -114,7 +114,7 @@ export const authLogout = () => async (dispatch) => {
 export const postTask = (FormData) => async (dispatch) => {
   try {
     const data = await axios.post(
-      `https://impossible-slippers-colt.cyclic.app/task`,
+      `https://outrageous-hoodie-jay.cyclic.app/task`,
       FormData
     );
     dispatch({ type: types.ADD_TASK_SUCCESS, payload: data.data.task });
@@ -127,7 +127,7 @@ export const postTask = (FormData) => async (dispatch) => {
 export const postSprint = (FormData) => async (dispatch) => {
   try {
     const data = await axios.post(
-      `https://impossible-slippers-colt.cyclic.app/sprint`,
+      `https://outrageous-hoodie-jay.cyclic.app/sprint`,
       FormData
     );
     dispatch({ type: types.ADD_SPRINT_SUCCESS, payload: data.data.sprint });
@@ -140,7 +140,7 @@ export const postSprint = (FormData) => async (dispatch) => {
 export const getTask = (organization) => async (dispatch) => {
   try {
     const data = await axios.get(
-      `https://impossible-slippers-colt.cyclic.app/task?organization=${organization}`
+      `https://outrageous-hoodie-jay.cyclic.app/task?organization=${organization}`
     );
     dispatch({ type: types.GET_TASK_SUCCESS, payload: data.data.Tasks });
   } catch (error) {
@@ -152,7 +152,7 @@ export const getTask = (organization) => async (dispatch) => {
 export const getSprint = (organization) => async (dispatch) => {
   try {
     const data = await axios.get(
-      `https://impossible-slippers-colt.cyclic.app/sprint?organization=${organization}`
+      `https://outrageous-hoodie-jay.cyclic.app/sprint?organization=${organization}`
     );
     dispatch({ type: types.GET_SPRINT_SUCCESS, payload: data.data.Sprints });
   } catch (error) {
@@ -164,7 +164,7 @@ export const getSprint = (organization) => async (dispatch) => {
 export const getAssignee = (organization) => async (dispatch) => {
   try {
     const data = await axios.get(
-      `https://impossible-slippers-colt.cyclic.app/user?organization=${organization}`
+      `https://outrageous-hoodie-jay.cyclic.app/user?organization=${organization}`
     );
     dispatch({ type: types.GET_USER_SUCCESS, payload: data.data.user });
   } catch (error) {
@@ -176,7 +176,7 @@ export const getAssignee = (organization) => async (dispatch) => {
 export const deleteSprint = (id) => async (dispatch) => {
   try {
     await axios.delete(
-      `https://impossible-slippers-colt.cyclic.app/sprint/delete?id=${id}`
+      `https://outrageous-hoodie-jay.cyclic.app/sprint/delete?id=${id}`
     );
     dispatch({ type: types.DELETE_SPRINT_SUCCESS, payload: id });
   } catch (error) {
@@ -188,7 +188,7 @@ export const deleteSprint = (id) => async (dispatch) => {
 export const deleteTask = (id) => async (dispatch) => {
   try {
     await axios.delete(
-      `https://impossible-slippers-colt.cyclic.app/task/delete?id=${id}`
+      `https://outrageous-hoodie-jay.cyclic.app/task/delete?id=${id}`
     );
     dispatch({ type: types.DELETE_TASK_SUCCESS, payload: id });
   } catch (error) {
@@ -200,7 +200,7 @@ export const deleteTask = (id) => async (dispatch) => {
 export const editTask = (id, taskData) => async (dispatch) => {
   try {
     let data = await axios.put(
-      `https://impossible-slippers-colt.cyclic.app/task/update?taskid=${id}`,
+      `https://outrageous-hoodie-jay.cyclic.app/task/update?taskid=${id}`,
       taskData
     );
     console.log(data);

@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: rgba(211, 246, 255, 0.683);
+  background-color: rgba(255, 200, 37, 0.683);
 }
 .loginContainer {
   width: 900px;
