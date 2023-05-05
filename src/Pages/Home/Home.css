@@ -1,0 +1,40 @@
+.homeSection {
+  width: calc(100vw - 140px);
+  height: calc(100vh - 76px);
+  padding: 2rem;
+  overflow: scroll;
+  text-align: center;
+}
+
+.homeSection > div {
+  display: inline-block;
+  width: 300px;
+  height: 100%;
+  margin-right: 25px;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px;
+  overflow: scroll;
+  text-align: left;
+}
+.homeSection > div::-webkit-scrollbar {
+  display: none;
+}
+.homeSection > div > div {
+  background-color: rgba(221, 221, 221, 0.597);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.homeSection > div > div:nth-child(1) {
+  background-color: rgba(197, 235, 255, 0.597);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeSection > div > div:nth-child(1) div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
