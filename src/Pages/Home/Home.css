@@ -25,6 +25,18 @@ select {
   gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
 }
+.pagination {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.pagination button {
+  width: 60px;
+  cursor: pointer;
+}
 @media (max-width: 1200px) {
   .homeItems {
     grid-template-columns: repeat(4, 1fr);

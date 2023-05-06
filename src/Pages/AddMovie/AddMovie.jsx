@@ -1,8 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import Navbar from "../../Components/navbar/Navbar";
 import "./AddMovie.css";
 import { useState } from "react";
+import { postMovie } from "../../Redux/movie/action";
 const initialData = {
   Title: "",
   Year: "",
@@ -18,9 +19,20 @@ const initialData = {
 const AddMovie = () => {
   const auth = useSelector((store) => store.auth);
   const [movieData, setMovieData] = useState(initialData);
-
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setMovieData({ ...movieData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    for (let keys in movieData) {
+      if (movieData[keys] === "") {
+        return alert("Empty");
+      }
+    }
+    dispatch(postMovie(movieData)).then(() => {
+      setMovieData(initialData);
+    });
   };
 
   if (!auth.data.isAuthenticated) {
@@ -116,8 +128,10 @@ const AddMovie = () => {
             />
           </div>
           <div>
-            <button>Reset Form</button>
-            <button>Add Movie</button>
+            <button onClick={() => setMovieData(initialData)}>
+              Reset Form
+            </button>
+            <button onClick={handleSubmit}>Add Movie</button>
           </div>
         </div>
       </div>

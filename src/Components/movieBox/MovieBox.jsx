@@ -1,11 +1,13 @@
 import { MdDeleteSweep, MdOutlineEditCalendar } from "react-icons/md";
 import "./MovieBox.css";
 import { Link } from "react-router-dom";
-import { Modal } from "antd";
+import { Button, Modal, Popconfirm, message } from "antd";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteMovie, editMovie } from "../../Redux/movie/action";
 
 const MovieBox = ({ data }) => {
-  let { Title, Year, Poster, imdbRating } = data;
+  let { Title, Year, Poster, imdbRating, _id } = data;
   const initialData = {
     Title,
     Year,
@@ -14,6 +16,7 @@ const MovieBox = ({ data }) => {
   };
   const [movieData, setMovieData] = useState(initialData);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -31,6 +34,20 @@ const MovieBox = ({ data }) => {
     setMovieData({ ...movieData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = () => {
+    dispatch(editMovie(_id, movieData)).then(() => handleOk());
+  };
+
+  const confirm = () => {
+    message.info("Movie deleted successfully.");
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteMovie(_id)).then(() => confirm());
+  };
+
+  const text = <span>Delete Movie?</span>;
+
   return (
     <div className="movieBox">
       <Link to="/home/1">
@@ -45,10 +62,11 @@ const MovieBox = ({ data }) => {
         <Modal
           title="Edit Movie"
           open={isModalOpen}
-          onOk={handleOk}
+          onOk={handleSubmit}
           onCancel={handleCancel}
         >
           <input
+            required
             className="formInput"
             type="text"
             placeholder="Title"
@@ -58,6 +76,7 @@ const MovieBox = ({ data }) => {
           />
           <br />
           <input
+            required
             className="formInput"
             type="text"
             placeholder="Year"
@@ -67,6 +86,7 @@ const MovieBox = ({ data }) => {
           />
           <br />
           <input
+            required
             className="formInput"
             type="text"
             placeholder="Poster url"
@@ -76,6 +96,7 @@ const MovieBox = ({ data }) => {
           />
           <br />
           <input
+            required
             className="formInput"
             type="text"
             placeholder="IMDB Rating"
@@ -85,7 +106,16 @@ const MovieBox = ({ data }) => {
           />
           <br />
         </Modal>
-        <MdDeleteSweep />
+
+        <Popconfirm
+          placement="topLeft"
+          title={text}
+          onConfirm={handleDelete}
+          okText={"Yes"}
+          cancelText="No"
+        >
+          <MdDeleteSweep />
+        </Popconfirm>
       </div>
     </div>
   );

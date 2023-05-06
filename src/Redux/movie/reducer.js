@@ -16,7 +16,7 @@ export function movieReducer(state = initialState, { type, payload }) {
         movies: [
           ...state.movies.map((elem) => {
             if (elem._id === payload.id) {
-              return payload.item;
+              return payload.movie;
             }
             return elem;
           }),
@@ -25,8 +25,8 @@ export function movieReducer(state = initialState, { type, payload }) {
     case types.DELETE_MOVIES_SUCCESS: {
       return {
         ...state,
-        sprint: [
-          ...state.sprint.filter((elem) => {
+        movies: [
+          ...state.movies.filter((elem) => {
             return elem._id !== payload;
           }),
         ],
