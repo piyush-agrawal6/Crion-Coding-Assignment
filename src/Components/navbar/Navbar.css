@@ -45,3 +45,8 @@ a {
     padding: 0;
   }
 }
+@media (max-width: 450px) {
+  .navbar div p {
+    display: none;
+  }
+}

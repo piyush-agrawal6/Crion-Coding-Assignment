@@ -1,0 +1,59 @@
+.movieSection {
+  width: calc(100vw - 140px);
+  height: calc(100vh - 76px);
+  padding: 2rem;
+  overflow: scroll;
+  display: flex;
+}
+.movieSection > div:nth-child(1) {
+  width: 350px;
+  padding: 1rem;
+  background-color: aliceblue;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 4px;
+  margin-right: 3rem;
+}
+.movieSection > div:nth-child(1) img {
+  width: 100%;
+}
+.movieSection > div:nth-child(2) {
+  width: calc(100% - 300px);
+  padding: 1rem;
+  background-color: aliceblue;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 4px;
+}
+.movieSection > div:nth-child(2) > div {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 1024px) {
+  .movieSection {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .movieSection > div:nth-child(1) {
+    width: 100%;
+    text-align: center;
+  }
+  .movieSection > div:nth-child(1) img {
+    width: 30%;
+  }
+  .movieSection > div:nth-child(2) {
+    width: 100%;
+  }
+}
+@media (max-width: 668px) {
+  .movieSection {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    overflow: auto;
+  }
+}
+@media (max-width: 468px) {
+  .movieSection > div:nth-child(1) img {
+    width: 100%;
+  }
+}

@@ -1,11 +1,16 @@
 import * as types from "./types";
 const initialState = {
   movies: [],
+  singleMovie: {},
+  error: false,
 };
 export function movieReducer(state = initialState, { type, payload }) {
   switch (type) {
     case types.GET_MOVIES_SUCCESS: {
       return { ...state, movies: payload };
+    }
+    case types.GET_SINGLE_MOVIES_SUCCESS: {
+      return { ...state, singleMovie: payload.movie, error: payload.error };
     }
     case types.ADD_MOVIES_SUCCESS: {
       return { ...state, movies: [...state.movies, payload] };

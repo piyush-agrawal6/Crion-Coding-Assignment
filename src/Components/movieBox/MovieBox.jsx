@@ -50,7 +50,7 @@ const MovieBox = ({ data }) => {
 
   return (
     <div className="movieBox">
-      <Link to="/home/1">
+      <Link to={`/home/${_id}`}>
         <div>
           <img src={Poster} alt="movie_poster" />
         </div>

@@ -36,3 +36,11 @@
   font-size: 16px;
   margin-bottom: 8px;
 }
+@media (max-width: 450px) {
+  .movieBox > a > h4{
+    font-size: 13px;
+  }
+  .movieBox > a > p {
+    font-size: 12px;
+  }
+}

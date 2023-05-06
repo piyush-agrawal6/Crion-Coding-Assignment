@@ -64,3 +64,9 @@ select {
     overflow: auto;
   }
 }
+@media (max-width: 450px) {
+  .homeOptions input,
+  select {
+    width: 100%;
+  }
+}

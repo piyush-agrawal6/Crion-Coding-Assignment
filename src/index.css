@@ -52,3 +52,20 @@ body {
     padding: 1rem;
   }
 }
+@media (max-width: 450px) {
+  .Container {
+    flex-direction: column;
+  }
+  .Container > div:nth-child(1) {
+    width: 100vw;
+    height: 60px;
+  }
+  .Container > div:nth-child(2) {
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+  }
+  .sectionNav {
+    padding: 1rem;
+  }
+}
