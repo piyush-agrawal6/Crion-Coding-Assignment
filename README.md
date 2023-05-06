@@ -37,6 +37,8 @@ Client - https://crion-coding-assignment.netlify.app/
 
 Server - https://outrageous-hoodie-jay.cyclic.app/movie
 
+Backend Repo - https://github.com/piyush-agrawal6/Crion-Backend
+
 ## Screenshots
 
 1. Login
