@@ -30,3 +30,18 @@ a {
   color: rgba(255, 255, 255, 0.807);
   font-size: 30px;
 }
+
+@media (max-width: 668px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+  .navAvatar img {
+    width: 30px;
+    border-radius: 10px;
+  }
+  .navIcons {
+    padding: 0;
+  }
+}

@@ -1,0 +1,38 @@
+.movieBox {
+  padding: 1rem;
+  border: 1px solid rgb(211, 211, 211);
+  background-color: rgb(229, 243, 255);
+  border-radius: 10px;
+}
+.movieBox:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 5px;
+}
+.movieBox a {
+  color: black;
+  cursor: pointer;
+}
+.movieBox > a > div img {
+  width: 100%;
+}
+.movieBox p {
+  margin: 7px 0;
+}
+.movieIcons {
+  color: #005d9b;
+  display: flex;
+  justify-content: space-between;
+}
+.movieIcons svg {
+  cursor: pointer;
+  font-size: 20px;
+}
+.formInput {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  outline: none;
+  color: black;
+  font-size: 16px;
+  margin-bottom: 8px;
+}

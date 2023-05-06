@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home/Home";
-import Login from "../Pages/login/Login";
-import Otp from "../Pages/login/Otp";
-import Signup from "../Pages/login/Signup";
-import Task from "../Pages/Task/Task";
+import Login from "../Pages/Login/Login";
+import Otp from "../Pages/Otp/Otp";
+import Signup from "../Pages/Signup/Signup";
+import AddMovie from "../Pages/AddMovie/AddMovie";
+import Movie from "../Pages/Movie/Movie";
 
 const AllRoutes = () => {
   return (
@@ -14,7 +15,8 @@ const AllRoutes = () => {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/otp" element={<Otp />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/task" element={<Task />}></Route>
+        <Route path="/home/:id" element={<Movie />}></Route>
+        <Route path="/add" element={<AddMovie />}></Route>
       </Routes>
     </>
   );
